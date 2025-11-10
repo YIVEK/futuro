@@ -226,6 +226,6 @@ p {
 
 .descripcion-en {
     color: var(--color-text-muted); /* Un color un poco más suave */
-    font-style: italic;
     font-size: 0.95rem; /* Ligeramente más pequeño */
 }
+

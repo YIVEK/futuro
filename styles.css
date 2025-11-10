@@ -205,3 +205,12 @@ p {
     text-decoration: underline;
     color: var(--color-text);
 }
+
+/* --- Imagen Destacada (Nueva) --- */
+.imagen-destacada {
+    width: 100%; /* Ocupa el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 15px; /* Espacio arriba */
+    margin-bottom: 20px; /* Espacio abajo */
+}

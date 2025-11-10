@@ -214,3 +214,18 @@ p {
     margin-top: 15px; /* Espacio arriba */
     margin-bottom: 20px; /* Espacio abajo */
 }
+
+/* --- Descripciones Bilingües (Nuevas) --- */
+.separador {
+    margin: 15px auto;
+    width: 50%;
+    border: 0;
+    height: 1px;
+    background: var(--color-primary);
+}
+
+.descripcion-en {
+    color: var(--color-text-muted); /* Un color un poco más suave */
+    font-style: italic;
+    font-size: 0.95rem; /* Ligeramente más pequeño */
+}

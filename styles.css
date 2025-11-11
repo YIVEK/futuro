@@ -1,14 +1,12 @@
-/* --- Variables de Color (Basadas en tu imagen) --- */
 :root {
-    --color-bg: #0A0A23; /* Fondo principal muy oscuro */
-    --color-bg-card: #1B1B3A; /* Fondo de las tarjetas */
-    --color-primary: #5A67D8; /* Azul primario para títulos y bordes */
-    --color-secondary: #7F9CF5; /* Azul más claro para acentos */
-    --color-text: #F7FAFC; /* Texto principal (casi blanco) */
-    --color-text-muted: #A0AEC0; /* Texto secundario (grisáceo) */
+    --color-bg: #0A0A23;
+    --color-bg-card: #1B1B3A;
+    --color-primary: #5A67D8;
+    --color-secondary: #7F9CF5;
+    --color-text: #F7FAFC;
+    --color-text-muted: #A0AEC0;
 }
 
-/* --- Reseteo Básico y Estilos Globales --- */
 * {
     margin: 0;
     padding: 0;
@@ -22,14 +20,12 @@ body {
     line-height: 1.6;
 }
 
-/* --- Contenedor Principal --- */
 .contenedor {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* --- Encabezado --- */
 .encabezado {
     background-color: var(--color-bg-card);
     padding: 30px;
@@ -50,12 +46,11 @@ body {
     font-weight: 300;
 }
 
-/* --- Menú de Navegación --- */
 .menu {
     background-color: var(--color-primary);
     padding: 10px 0;
     text-align: center;
-    margin-bottom: 30px; /* Separación del contenido */
+    margin-bottom: 30px;
 }
 
 .menu a {
@@ -64,18 +59,15 @@ body {
     padding: 10px 20px;
     font-weight: 700;
     font-size: 1.1rem;
-    border-radius: 5px; /* Bordes redondeados leves */
+    border-radius: 5px;
 }
 
-/* Estado activo (página actual) y hover */
 .menu a:hover, 
 .menu a.activo {
     background-color: var(--color-secondary);
-    color: var(--color-bg-card); /* Texto oscuro al resaltar */
+    color: var(--color-bg-card);
 }
 
-
-/* --- Estructura de Tarjetas --- */
 .tarjeta {
     background-color: var(--color-bg-card);
     border-radius: 12px;
@@ -85,27 +77,25 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Rejilla (para "Planes" y "Objetivo") --- */
 .rejilla {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
     margin-bottom: 25px;
 }
 
-/* --- Rejilla de Navegación (Página de Inicio) --- */
 .navegacion {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas flexibles */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     margin-bottom: 25px;
 }
 
-.enlace { /* Tarjeta de navegación */
+.enlace {
     background-color: var(--color-bg-card);
     border-radius: 12px;
     padding: 25px;
-    text-decoration: none; /* Quita el subrayado del enlace */
+    text-decoration: none;
     color: var(--color-text);
     border: 1px solid var(--color-primary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -113,7 +103,7 @@ body {
 }
 
 .enlace:hover {
-    transform: translateY(-5px); /* Efecto de "levantar" */
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(90, 103, 216, 0.3);
 }
 
@@ -126,26 +116,20 @@ body {
     color: var(--color-text-muted);
 }
 
-/* --- Sección Podcast --- */
 .podcast {
     text-align: center;
 }
 
-.podcast-icono {
-    font-size: 3rem;
-    margin-top: 15px;
-    color: var(--color-secondary);
+iframe[data-testid="embed-iframe"] {
+    border-radius: 12px;
 }
 
-
-/* Para pantallas pequeñas, hacer que sean una sola columna */
 @media (max-width: 700px) {
     .rejilla {
         grid-template-columns: 1fr;
     }
 }
 
-/* --- Estilos de Texto --- */
 h2 {
     color: var(--color-secondary);
     font-size: 1.8rem;
@@ -167,12 +151,10 @@ p {
     margin-bottom: 15px;
 }
 
-/* --- Estilos de Canva Embebidos --- */
-.canva-marco { /* Reemplaza a .canva-embed-wrapper */
+.canva {
     position: relative;
     width: 100%;
     height: 0;
-    /* padding-top se ajusta en el HTML con 'style' porque cada embed es diferente */
     box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
     margin-top: 1.6em;
     margin-bottom: 0.9em;
@@ -181,7 +163,15 @@ p {
     will-change: transform;
 }
 
-.canva-marco iframe {
+.canvavertical {
+    padding-top: 250.0000%;
+}
+
+.canvahorizontal {
+    padding-top: 56.2500%;
+}
+
+.canva iframe {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -192,7 +182,7 @@ p {
     margin: 0;
 }
 
-.canva-enlace { /* Reemplaza a .canva-link */
+.enlacecanva {
     display: block;
     text-align: center;
     color: var(--color-secondary);
@@ -201,21 +191,19 @@ p {
     font-size: 0.9rem;
 }
 
-.canva-enlace:hover {
+.enlacecanva:hover {
     text-decoration: underline;
     color: var(--color-text);
 }
 
-/* --- Imagen Destacada (Nueva) --- */
-.imagen-destacada {
-    width: 100%; /* Ocupa el ancho de la tarjeta */
-    height: auto; /* Mantiene la proporción */
-    border-radius: 8px; /* Bordes redondeados */
-    margin-top: 15px; /* Espacio arriba */
-    margin-bottom: 20px; /* Espacio abajo */
+.imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
-/* --- Descripciones Bilingües (Nuevas) --- */
 .separador {
     margin: 15px auto;
     width: 50%;
@@ -224,8 +212,7 @@ p {
     background: var(--color-primary);
 }
 
-.descripcion-en {
-    color: var(--color-text-muted); /* Un color un poco más suave */
-    font-size: 0.95rem; /* Ligeramente más pequeño */
+.ingles {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
 }
-
